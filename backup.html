@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-    content="MolCRAFT: Structure-Based Drug Design in Continuous Parameter Space">
-  <meta name="keywords" content="SBDD">
+    content="Towards Predicting Equilibrium Distributions for Molecular Systems with Deep Learning">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MolCRAFT: Structure-Based Drug Design in Continuous Parameter Space</title>
+  <title>Towards Predicting Equilibrium Distributions for Molecular Systems with Deep Learning</title>
 
   <script src="https://3Dmol.org/build/3Dmol-min.js"></script>
   <script src="https://3Dmol.org/build/3Dmol.ui-min.js"></script>
@@ -45,60 +45,83 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <!-- <h1 class="title is-1 publication-title" style="display: inline; color:darkcyan;">
+            <h1 class="title is-1 publication-title" style="display: inline; color:darkcyan;">
               <span style="white-space: nowrap">Distributional</span>
               <span style="white-space: nowrap"><img src="./static/images/icon.png" alt="G"
                   style="display: inline; vertical-align: top; width: 3rem;">raphormer: </span>
-            </h1> -->
-            <h1 class="title is-1 publication-title" style="display: inline;">MolCRAFT: Structure-Based Drug Design in Continuous Parameter Space</h1>
+            </h1>
+            <h1 class="title is-1 publication-title" style="display: inline;">Towards Predicting Equilibrium
+              Distributions for Molecular Systems with Deep Learning</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                Yanru Qu<sup>*12</sup>,
+                Shuxin Zheng<sup>*†1</sup>,
               </span>
               <span class="author-block">
-                Keyue Qiu<sup>*13</sup>,
+                Jiyan He<sup>†1</sup>,
               </span>
               <span class="author-block">
-                Yuxuan Song<sup>*13</sup>,
+                Chang Liu<sup>*†1</sup>,
               </span>
               <span class="author-block">
-                Jingjing Gong<sup>1</sup>,
+                Yu Shi<sup>†1</sup>,
               </span>
               <span class="author-block">
-                Jiawei Han<sup>2</sup>,
+                Ziheng Lu<sup>†1</sup>,
               </span>
               <span class="author-block">
-                Mingyue Zheng<sup>4</sup>,
+                Weitao Feng<sup>1</sup>,
               </span>
               <span class="author-block">
-                Hao Zhou<sup>1</sup>,
+                Fusong Ju<sup>1</sup>,
               </span>
               <span class="author-block">
-                and Weiying Ma<sup>1</sup>,
+                Jiaxi Wang<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Jianwei Zhu<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Yaosen Min<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                He Zhang<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Shidi Tang<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Hongxia Hao<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Peiran Jin<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Chi Chen<sup>2</sup>,
+              </span>
+              <span class="author-block">
+                Frank Noé<sup>1</sup>,
+              </span>
+              <span class="author-block">
+                Haiguang Liu<sup>*†1</sup>,
+              </span>
+              <span class="author-block">
+                and
+                Tie-Yan Liu<sup>*1</sup>
               </span>
             </div>
 
             <br>
             <div class="is-size-5 publication-authors">
-              <sup>*</sup><span class="author-block">equal contribution.</span>
+              <sup>1</sup><span class="author-block">Microsoft Research AI4Science.</span>
             </div>
             <div class="is-size-5 publication-authors">
-              <sup>1</sup><span class="author-block">Tsinghua AIR.</span>
-            </div>
-            <div class="is-size-5 publication-authors">
-              <sup>2</sup><span class="author-block">UIUC.</span>
-            </div>
-            <div class="is-size-5 publication-authors">
-              <sup>3</sup><span class="author-block">Tsinghua University.</span>
-            </div>
-            <div class="is-size-5 publication-authors">
-              <sup>4</sup><span class="author-block">Shanghai Institute of Materia Medica.</span>
+              <sup>2</sup><span class="author-block">Microsoft Quantum.</span>
             </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
                 <!-- Nature Link. -->
-                <!-- <span class="link-block">
+                <span class="link-block">
                   <a href="https://www.nature.com/articles/s42256-024-00837-3"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -106,10 +129,10 @@
                     </span>
                     <span>Nature</span>
                   </a>
-                </span> -->
+                </span>
                 <!-- PDF Link. -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2404.12141"
+                  <a href="https://arxiv.org/abs/2306.05445"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                         <i class="ai ai-arxiv"></i>
@@ -128,7 +151,7 @@
 
 
 
-<!--   <section class="section hero is-light"
+  <section class="section hero is-light"
     style="padding-top: 24px; padding-bottom: 24px; padding-left: 4px; padding-right: 4px;">
     <div class="container">
 
@@ -142,7 +165,7 @@
 
     </div>
   </section>
- -->
+
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -152,23 +175,20 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Generative models for structure-based drug design (SBDD) have shown promising results in
-recent years. Existing works mainly focus on
-how to generate molecules with higher binding
-affinity, ignoring the feasibility prerequisites for
-generated 3D poses and resulting in false positives. We conduct thorough studies on key factors
-of ill-conformational problems when applying
-autoregressive methods and diffusion to SBDD,
-including mode collapse and hybrid continuousdiscrete space. In this paper, we introduce MolCRAFT, the first SBDD model that operates in
-the continuous parameter space, together with
-a novel noise reduced sampling strategy. Empirical results show that our model consistently
-achieves superior performance in binding affinity
-with more stable 3D structure, demonstrating our
-ability to accurately model interatomic interactions. To our best knowledge, MolCRAFT is the
-first to achieve reference-level Vina Scores (-6.59
-kcal/mol) with comparable molecular size, outperforming other strong baselines by a wide margin
-(-0.84 kcal/mol). Code is available at https:
-//github.com/AlgoMole/MolCRAFT.
+              Advances in deep learning have greatly improved structure prediction of molecules. However, many
+              macroscopic observations that are important for real-world applications are not functions of a single
+              molecular structure, but rather determined from the equilibrium distribution of structures. Traditional
+              methods for obtaining these distributions, such as molecular dynamics simulation, are computationally
+              expensive and often intractable. In this paper, we introduce a novel deep learning framework, called
+              Distributional Graphormer (DiG), in an attempt to predict the equilibrium distribution of molecular
+              systems. Inspired by the annealing process in thermodynamics, DiG employs deep neural networks to
+              transform a simple distribution towards the equilibrium distribution, conditioned on a descriptor of a
+              molecular system, such as chemical graph or protein sequence. This framework enables efficiently
+              generating diverse conformations and provides estimations of state densities. We demonstrate the
+              performance of DiG on several molecular tasks, including protein conformation sampling, ligand structure
+              sampling, catalyst-adsorbate sampling, and property-guided structure generation. DiG presents a
+              significant advancement in methodology for statistically understanding molecular systems, opening up new
+              research opportunities in molecular science.
             </p>
 
           </div>
@@ -179,7 +199,7 @@ kcal/mol) with comparable molecular size, outperforming other strong baselines b
 
 
 
-  <!-- <section class="section">
+  <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Protein conformation sampling and distribution in 2D subspace</h2>
       <div class="content">
@@ -250,9 +270,9 @@ kcal/mol) with comparable molecular size, outperforming other strong baselines b
 
     </div>
   </section>
- -->
 
-  <!-- <section class="hero is-small">
+
+  <section class="hero is-small">
 
     <div class="hero-body">
 
@@ -288,7 +308,7 @@ kcal/mol) with comparable molecular size, outperforming other strong baselines b
                   <button class="btn btn-primary loads-model" data-controls="mesh-frog" data-action="load">Load 4ake
                     Structure</button>
                 </div>
-                
+                <!-- <p class="caption has-text-centered" title="1ake model">1ake model</p> -->
               </div>
               <div class="col-md-6 col-sm-6 my-auto">
                 <model-viewer ar="true" ar-modes="webxr scene-viewer quick-look" loading="lazy" reveal="manual"
@@ -299,7 +319,8 @@ kcal/mol) with comparable molecular size, outperforming other strong baselines b
                   <button class="btn btn-primary loads-model" data-controls="mesh-chick" data-action="load">Load 1ake
                     Structure</button>
                 </div>
-                
+                <!-- <p class="caption has-text-centered"
+                  title="1ake model">1ake model</p> -->
               </div>
             </div>
 
@@ -403,11 +424,11 @@ kcal/mol) with comparable molecular size, outperforming other strong baselines b
       </div>
 
     </div>
-  </section> -->
+  </section>
 
-  <!-- <section class="section">
+  <section class="section">
     <div class="container is-max-desktop">
-
+      <!-- Animation. -->
       <h2 class="title is-3">Conformation transition pathway prediction </h2>
       <div class="content">
         <p>
@@ -434,6 +455,7 @@ kcal/mol) with comparable molecular size, outperforming other strong baselines b
         </div>
 
       </div>
+      <!--/ Animation. -->
 
       <div class="content">
         <p style="color: gray; font-size: small;">
@@ -444,22 +466,22 @@ kcal/mol) with comparable molecular size, outperforming other strong baselines b
       </div>
 
     </div>
-  </section> -->
+  </section>
 
   <section class="section">
     <div class="container is-max-desktop">
 
-      <h2 class="title is-3">Ligand generation for given protein pocket</h2>
-      <!-- <h3 class="title is-4">Process of ligand generation</h3>
+      <h2 class="title is-3">Ligand binding structure generation for given protein pocket</h2>
+      <h3 class="title is-4">Process of ligand generation</h3>
       <div class="content" style="margin-bottom: 2rem;">
         <p>
           The following animations show the process of ligand structure generation. The atoms of ligands are shown as
           spheres, which gradually converge to their final positions, predicting the binding poses within given protein
           pockets.
         </p>
-      </div> -->
+      </div>
 
-      <!-- <div class="columns is-centered">
+      <div class="columns is-centered">
 
         <div class="column is-full-width">
           <video id="teaser" autoplay muted loop preload playsinline height="100%">
@@ -483,17 +505,17 @@ kcal/mol) with comparable molecular size, outperforming other strong baselines b
           </div>
         </div>
 
-      </div> -->
+      </div>
 
-      <!-- <h3 class="title is-4">More examples of the predicted binding structures</h3>
+      <h3 class="title is-4">More examples of the predicted binding structures</h3>
       <div class="content" style="margin-bottom: 2rem;">
         <p>
           The figures can be interactively visualized by manipulating the molecules with a mouse pointer. Scroll left or
           right for more examples.
         </p>
-      </div> -->
+      </div>
 
-      <!-- <div id="results-carousel" class="carousel results-carousel"> -->
+      <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-steve">
 
           <div style="text-align: center;margin: 0.5rem">
@@ -547,7 +569,7 @@ kcal/mol) with comparable molecular size, outperforming other strong baselines b
           </script>
 
         </div>
-        <<!-- div class="item item-chair-tp">
+        <div class="item item-chair-tp">
 
           <div style="text-align: center;margin: 0.5rem">
             <h2 class="title is-5 has-text-centered" style="margin: 0 auto;display: inline;">P38 binding with</h2>
@@ -705,14 +727,14 @@ kcal/mol) with comparable molecular size, outperforming other strong baselines b
           </script>
 
 
-        </div> -->
-      <!-- </div> -->
+        </div>
+      </div>
 
 
     </div>
   </section>
 
-  <!-- <section class="section">
+  <section class="section">
     <div class="container is-max-desktop">
 
       <div class="container is-max-desktop" style="margin-bottom: 2rem;">
@@ -824,9 +846,9 @@ kcal/mol) with comparable molecular size, outperforming other strong baselines b
 
     </div>
   </section>
- -->
 
-  <!-- <section class="section">
+
+  <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">Property-guided structure generation (Inverse design)</h2>
       <div class="content">
@@ -935,10 +957,10 @@ kcal/mol) with comparable molecular size, outperforming other strong baselines b
       </div>
 
     </div>
-  </section> -->
+  </section>
 
 
-  <!-- <section class="section">
+  <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-full-width">
@@ -968,16 +990,18 @@ kcal/mol) with comparable molecular size, outperforming other strong baselines b
       </div>
 
     </div>
-  </section> -->
+  </section>
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@article{qu2024molcraft,
-  title={MolCRAFT: Structure-Based Drug Design in Continuous Parameter Space},
-  author={Qu, Yanru and Qiu, Keyue and Song, Yuxuan and Gong, Jingjing and Han, Jiawei and Zheng, Mingyue and Zhou, Hao and Ma, Wei-Ying},
-  journal={ICML 2024},
-  year={2024}
+      <pre><code>@article{zheng2024predicting,
+  title={Predicting equilibrium distributions for molecular systems with deep learning},
+  author={Zheng, Shuxin and He, Jiyan and Liu, Chang and Shi, Yu and Lu, Ziheng and Feng, Weitao and Ju, Fusong and Wang, Jiaxi and Zhu, Jianwei and Min, Yaosen and others},
+  journal={Nature Machine Intelligence},
+  pages={1--10},
+  year={2024},
+  publisher={Nature Publishing Group UK London}
 }</code></pre>
     </div>
   </section>
