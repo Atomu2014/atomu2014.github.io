@@ -496,10 +496,10 @@ kcal/mol) with comparable molecular size, outperforming other strong baselines b
       <!-- <div id="results-carousel" class="carousel results-carousel"> -->
         <div class="item item-steve">
 
-          <div style="text-align: center;margin: 0.5rem">
+          <!-- <div style="text-align: center;margin: 0.5rem">
             <h2 class="title is-5 has-text-centered" style="margin: 0 auto;display: inline;">Tyk2 binding with</h2>
             <img src="./static/images/ensemble_tyk2lig.png" alt="Tyk2lig" style="height: 4rem;display: inline;">
-          </div>
+          </div> -->
 
           <div id="container-01" class="mol-container" style="width: 100%; height:500px;"></div>
           <script>
@@ -535,7 +535,7 @@ kcal/mol) with comparable molecular size, outperforming other strong baselines b
                 });
 
                 viewer.setStyle({}, { stick: { radius: 0.4 } });
-                viewer.setStyle({ model: 0 }, { cartoon: { color: 'spectrum' } });
+                viewer.setStyle({ model: 0 }, { cartoon: { color: 'pymol' } });
                 viewer.zoomTo();
                 viewer.render();
                 viewer.zoom(1.2, 1000);
